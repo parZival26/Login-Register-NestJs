@@ -6,10 +6,11 @@ import { UserService } from 'src/user/user.service';
 import { UserModule } from 'src/user/user.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
+import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   controllers: [AuthController],
-  providers: [AuthService, PrismaService, UserService],
+  providers: [AuthService, PrismaService, UserService, JwtStrategy],
   imports: [
     UserModule,
     PassportModule,
